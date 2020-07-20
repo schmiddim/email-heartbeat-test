@@ -3,8 +3,8 @@ from modules import get_age_of_newest_mail_with_pattern
 from os import getenv
 
 imap_url = getenv('IMAP_HOST')
-user = getenv('USER')
-password = getenv('PASSWORD')
+user = getenv('RECIEVER_USER')
+password = getenv('RECIEVER_PASSWORD')
 threshold_seconds = int(getenv('TRESHHOLD_SECONDS'))
 result = get_age_of_newest_mail_with_pattern(user=user,
                                              password=password,
@@ -14,5 +14,3 @@ result = get_age_of_newest_mail_with_pattern(user=user,
 
 if result > threshold_seconds:
     raise Exception('Age of last message above threshold: {}'.format(result))
-
-# print('Age of last message: {}'.format(result))

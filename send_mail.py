@@ -2,8 +2,8 @@ from modules import send_smtp_mail
 from os import getenv
 
 smtp_server = getenv('SMTP_HOST')
-user = getenv('USER')
-password = getenv('PASSWORD')
+user = getenv('SENDER_USER')
+password = getenv('SENDER_PASSWORD')
 port = getenv('SMTP_PORT')
 
 send_smtp_mail(mail_from=user,
